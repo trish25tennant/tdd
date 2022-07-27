@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<body>
+<script>
+  let age=15;
+  let responses = "Too young In the required age range Too old";
+  let start;
+  let end;
+if(age <= 17) {
+  start=responses.indexOf("Too");
+  end=responses.indexOf("In");
+} else if(age >=18 && age <=65){
+  start=responses.indexOf("In");
+  end=responses.lastIndexOf("Too");
+} else {
+  start=responses.lastIndexOf("Too");
+  end=undefined;
+}
+console.log(age + " – " + responses.substring(start, end));
+</script>
+</body>
+</html>
