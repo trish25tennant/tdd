@@ -1,23 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
- 
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
 <body>
-<script>
-  let age=15;
-  let responses = "Too young In the required age range Too old";
-  let start;
-  let end;
-if(age <= 17) {
-  start=responses.indexOf("Too");
-  end=responses.indexOf("In");
-} else if(age >=18 && age <=65){
-  start=responses.indexOf("In");
-  end=responses.lastIndexOf("Too");
-} else {
-  start=responses.lastIndexOf("Too");
-  end=undefined;
-}
-console.log(age + " – " + responses.substring(start, end));
-</script>
+  <script>
+  const ageChecker = (ageToCheck)=>
+    {var age= ageToCheck;
+    let responses = "Too young In the required age range Too old";
+    let start;
+    let end;
+    if (age<=17){
+      start = responses.indexOf("Too");
+      end = responses.indexOf("In");
+    }else if(age>=18 && age <=65){
+      start = responses.indexOf("In");
+      end = responses.lastIndexOf("Too");
+    }else{
+      start = responses.lastIndexOf("Too");
+      end = undefined;
+    }
+    console.log(age + "-" + responses.substring(start, end));
+    }
+  ageChecker(10);
+  ageChecker(50);
+  for (let i =10; i <80; i=i+5 ){
+    ageChecker(i);
+  }
+  
+    </script>
 </body>
 </html>
